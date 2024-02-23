@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Social links profile | vdeleeuw</title>
+
+    <style>
+      @font-face {
+        font-family: "Inter";
+        src: url("assets/fonts/Inter-VariableFont_slnt,wght.ttf")
+          format("opentype");
+      }
+
+      body {
+        overflow: hidden;
+        background-color: hsl(0, 0%, 8%);
+        color: hsl(0, 0%, 100%);
+        font-family: "Inter", sans-serif;
+      }
+
+      p {
+        font-size: 14px;
+        padding: 0.5em;
+        text-align: center;
+      }
+
+      .container {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .card {
+        padding: 0 2em;
+        border-radius: 1em;
+        background-color: hsl(0, 0%, 12%);
+      }
+
+      /* title */
+      .title-block {
+        display: flex;
+        padding: 1em;
+        flex-direction: column;
+        align-items: center;
+
+        .title-block__avatar {
+          padding: 1em;
+        }
+
+        .title-block__main {
+          font-size: 2em;
+          font-weight: 700;
+        }
+
+        .title-block__subtitle {
+          padding-top: 0.5em;
+          font-size: 1em;
+          font-weight: 600;
+          color: hsl(75, 94%, 57%);
+        }
+      }
+
+      /* button-list */
+      .button-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .button-list__item {
+          width: 80%;
+          background-color: hsl(0, 0%, 20%);
+          padding: 1em;
+          border-radius: 1em;
+          margin: 0.5em 0;
+          font-weight: 600;
+          text-align: center;
+          text-decoration: none;
+          color: inherit;
+        }
+
+        .button-list__item--disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+
+        .button-list__item--hover:hover {
+          color: hsl(0, 0%, 8%);
+          background-color: hsl(75, 94%, 57%);
+          cursor: pointer;
+        }
+      }
+
+      .attribution {
+        padding: 1em 0;
+        font-size: 11px;
+        text-align: center;
+
+        a {
+          color: hsl(228, 45%, 44%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="title-block">
+          <img
+            class="title-block__avatar"
+            src="assets/images/avatar-vdeleeuw.png"
+          />
+          <span class="title-block__main">V. de Leeuw</span>
+          <span class="title-block__subtitle">Somewhere, France</span>
+        </div>
+
+        <p>"Full-stack developer and avid musician."</p>
+
+        <div class="button-list">
+          <a
+            class="button-list__item button-list__item--hover"
+            href=""
+            target="_blank"
+          >
+            <span>GitHub</span></a
+          >
+          <a
+            href=""
+            target="_blank"
+            class="button-list__item button-list__item--hover"
+            ><span>Frontend Mentor</span></a
+          >
+          <span class="button-list__item button-list__item--disabled"
+            >LinkedIn</span
+          >
+          <span class="button-list__item button-list__item--disabled"
+            >Twitter</span
+          >
+          <span class="button-list__item button-list__item--disabled"
+            >Instagram</span
+          >
+        </div>
+
+        <!-- attribution -->
+        <div class="attribution">
+          <p>
+            Challenge by
+            <a
+              href="https://www.frontendmentor.io?ref=challenge"
+              target="_blank"
+              >Frontend Mentor</a
+            >. <br />
+            Coded by <a href="https://github.com/vdeleeuw">vdeleeuw</a> with ❤️.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
