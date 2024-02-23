@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Blog preview card | vdeleeuw</title>
+
+    <style>
+      @font-face {
+        font-family: "Figtree";
+        src: url("assets/fonts/Figtree-VariableFont_wght.ttf"),
+          url("assets/fonts/Figtree-Italic-VariableFont_wght.ttf");
+      }
+
+      body {
+        height: 100vh;
+        background-color: hsl(47, 88%, 63%);
+        font-family: "Fightree", sans-serif;
+        overflow: hidden;
+      }
+
+      .container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card {
+        background-color: hsl(0, 0%, 100%);
+        border-radius: 1.1em;
+        border: 0.1em solid hsl(0, 0%, 7%);
+        box-shadow: 0.5em 0.5em 0em 0em hsl(0, 0%, 7%);
+
+        display: flex;
+        flex-direction: column;
+        padding: 1.5em;
+        max-width: 20em;
+
+        .card__illustration {
+          width: 100%;
+          height: 100%;
+
+          img {
+            border-radius: 1.1em;
+          }
+        }
+
+        .card__tag-list {
+          padding: 2em 0;
+
+          .card__tag-list__item {
+            text-align: center;
+            background-color: hsl(47, 88%, 63%);
+            padding: 0.5em;
+            border-radius: 0.5em;
+            font-weight: 800;
+            font-size: 0.9em;
+          }
+        }
+
+        .card__date {
+          padding-bottom: 2em;
+          font-size: 0.9em;
+        }
+
+        .card__title {
+          font-size: 1.2em;
+          font-weight: 800;
+        }
+
+        .card__description {
+          line-height: 1.5em;
+          color: hsl(0, 0%, 50%);
+        }
+
+        .card__author {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .card__author__avatar {
+            height: 50px;
+            width: 50px;
+          }
+
+          .card__author__name {
+            padding-left: 1em;
+            font-weight: 800;
+          }
+        }
+      }
+
+      .card--hover:hover {
+        cursor: pointer;
+        box-shadow: 0.7em 0.7em 0em 0em hsl(0, 0%, 7%);
+
+        .card__title {
+          color: hsl(47, 88%, 63%);
+        }
+      }
+
+      .attribution {
+        padding-top: 1em;
+        font-size: 11px;
+        text-align: center;
+        a {
+          color: hsl(228, 45%, 44%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card card--hover">
+        <div class="card__illustration">
+          <img src="assets/images/illustration-article.svg" />
+        </div>
+        <div class="card__tag-list">
+          <span class="card__tag-list__item">Learning</span>
+          <span class="card__tag-list__item">Web</span>
+        </div>
+        <span class="card__date">Published 21 Dec 2023</span>
+        <span class="card__title">HTML & CSS foundations</span>
+        <p class="card__description">
+          These languages are the backbone of every website, defining structure,
+          content, and presentation.
+        </p>
+        <div class="card__author">
+          <img
+            class="card__author__avatar"
+            src="assets/images/avatar-vdeleeuw.png"
+          />
+          <span class="card__author__name">V. de Leeuw</span>
+        </div>
+      </div>
+
+      <!-- attribution -->
+      <div class="attribution">
+        <p>
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. <br />
+          Coded by <a href="https://github.com/vdeleeuw">vdeleeuw</a> with ❤️.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
