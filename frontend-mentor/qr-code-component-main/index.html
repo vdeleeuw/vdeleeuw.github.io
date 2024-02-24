@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | QR code component | vdeleeuw</title>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --white: hsl(0, 0%, 100%);
+        --light-gray: hsl(212, 45%, 89%);
+        --grayish-blue: hsl(220, 15%, 55%);
+        --dark-blue: hsl(218, 44%, 22%);
+
+        --font: "Outfit";
+        --font-size: 15px;
+        --medium: 400;
+        --bold: 700;
+      }
+
+      body {
+        font-family: var(--font), sans-serif;
+        background-color: var(--light-gray);
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 98vh;
+      }
+
+      .card {
+        max-width: 20em;
+        background-color: var(--white);
+        padding: 1.1em;
+        border-radius: 1.2em;
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .card__title {
+          padding: 1em 1em 0 1em;
+          margin: 0;
+          font-size: 1.5em;
+          color: var(--dark-blue);
+          text-align: center;
+          font-weight: var(--bold);
+        }
+
+        .card__illustration {
+          img {
+            height: 100%;
+            width: 100%;
+            border-radius: 1.1em;
+          }
+        }
+        .card__description {
+          padding: 0 1em;
+          text-align: center;
+          color: var(--grayish-blue);
+          font-size: var(--font-size);
+          font-weight: var(--medium);
+        }
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        a {
+          color: hsl(228, 45%, 44%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="card">
+          <div class="card__illustration">
+            <img src="images/image-qr-code.png" alt="qr code" />
+          </div>
+          <h1 class="card__title">
+            Improve your front-end skills by building projects
+          </h1>
+          <p class="card__description">
+            Scan the QR code to visit Frontend Mentor and take your coding
+            skills to the next level
+          </p>
+        </div>
+
+        <!-- attribution -->
+        <div class="attribution">
+          <p>
+            Challenge by
+            <a
+              href="https://www.frontendmentor.io?ref=challenge"
+              target="_blank"
+              >Frontend Mentor</a
+            >. <br />
+            Coded by
+            <a href="https://github.com/vdeleeuw" target="_blank">vdeleeuw</a>
+            with ❤️.
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
