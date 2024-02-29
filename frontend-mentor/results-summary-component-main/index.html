@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Frontend Mentor | Results summary component | vdeleeuw</title>
+
+    <style>
+      :root {
+        /* Colors */
+        /* Primary */
+        --light-red: hsl(0, 100%, 67%);
+        --orangey-yellow: hsl(39, 100%, 56%);
+        --green-teal: hsl(166, 100%, 37%);
+        --cobalt-blue: hsl(234, 85%, 45%);
+        /* Gradients */
+        --light-slate-blue: hsl(252, 100%, 67%); /* background */
+        --light-royal-blue: hsl(241, 81%, 54%); /* background */
+        --violet-blue: hsla(256, 72%, 46%, 1); /* circle */
+        --persian-blue: hsla(241, 72%, 46%, 0); /* circle */
+        /* Neutral */
+        --white: hsl(0, 0%, 100%);
+        --pale-blue: hsl(221, 100%, 96%);
+        --light-lavender: hsl(241, 100%, 89%);
+        --dark-gray-blue: hsl(224, 30%, 27%);
+
+        /* font */
+        --font: "Hanken Grotesk", sans-serif;
+        --font-size: 18px
+        --medium: 500;
+        --bold: 700;
+        --very-bold: 800;
+      }
+
+      @font-face {
+        font-family: "Hanken Grotesk";
+        src: url("assets/fonts/HankenGrotesk-VariableFont_wght.ttf")
+          format("opentype");
+      }
+
+      body {
+        font-family: var(--font);
+        font-size: var(--font-size);
+        font-weight: var(--medium);
+        margin: 0;
+        min-height: 95vh;
+      }
+
+      .reaction {
+        color: var(--light-red);
+      }
+
+      .memory {
+        color: var(--orangey-yellow);
+      }
+
+      .verbal {
+        color: var(--green-teal);
+      }
+
+      .visual {
+        color: var(--cobalt-blue);
+      }
+
+      .results {
+        display: flex;
+        flex-direction: column;
+
+        .synthesis {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+
+          background: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
+          color: var(--white);
+          border-radius: 0 0 2em 2em;
+
+          .synthesis__percentage {
+            background: linear-gradient(var(--violet-blue), var(--persian-blue));
+            border-radius: 100%;
+            width: 9em;
+            height: 9em;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .synthesis__score {
+              font-size: 3.8em;
+              font-weight: var(--very-bold);
+            }
+
+            .synthesis__total {
+              font-weight: var(--bold);
+              color: var(--light-lavender);
+              opacity: 0.5;
+            }
+          }
+
+          .synthesis__title {
+            padding: 0.5em;
+            color: var(--white);
+            opacity: 0.6;
+            font-size: 1.2em;
+          }
+
+          .synthesis__subtitle {
+            padding-top: 1em;
+            font-size: 1.5em;
+            font-weight: var(--bold);
+          }
+
+          .synthesis__text {
+            opacity: 0.7;
+            padding: 0 5em 2em 5em;
+            text-align: center;
+          }
+        }
+
+        .summary {
+          padding: 1.5em 2em 0 2em;
+          font-weight: var(--very-bold);
+
+          .summary__title {
+            font-weight: var(--bold);
+            font-size: 1.4em;
+          }
+
+          .summary__item {
+            display: flex;
+            flex-direction: row;
+            padding: 2em 0 0 0;
+            font-size: 1.2em;
+            justify-content: space-between;
+            align-items: center;
+
+            .summary__category {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              img {
+                padding-right: 0.8em;
+              }
+            }
+          }
+
+          .summary__total {
+            opacity: 0.4;
+          }
+        }
+
+        .summary__categories {
+          padding:  0 2em 2em 2em;
+        }
+      }
+
+      .results__action {
+        color: var(--white);
+        background-color: var(--dark-gray-blue);
+        border-radius: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.8em;
+        font-size: 1.2em;
+        cursor: pointer;
+
+        &:hover {
+          background: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
+        }
+      }
+
+      /* desktop */
+      @media screen and (min-width: 50em) {
+        .container {
+          min-height: 95vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+
+        .results {
+          flex-direction: row;
+
+          .synthesis {
+            border-radius: 2em;
+            width: 25em;
+
+            .synthesis__text {
+              padding: 0 6em ;
+            }
+          }
+
+          .summary {
+            padding: 2em;
+            width: 20em;
+          }
+        }
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+
+        a {
+          color: hsl(228, 45%, 44%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="results">
+          <div class="synthesis">
+            <h1 class="synthesis__title">Your Result</h1>
+            <div class="synthesis__percentage">
+              <span class="synthesis__score">76</span>
+              <span class="synthesis__total"> of 100</span>
+            </div>
+            <span class="synthesis__subtitle">Great</span>
+            <p class="synthesis__text">
+              You scored higher than 65% of the people who have taken these
+              tests.
+            </p>
+          </div>
+          <div class="summary">
+            <span class="summary__title">Summary</span>
+            <div class="summary__categories">
+              <div class="summary__item">
+                <div class="summary__category">
+                  <img
+                    src="assets/images/icon-reaction.svg"
+                    alt="reaction icon"
+                  />
+                  <span class="summary__name reaction">Reaction</span>
+                </div>
+                <div class="summary__result">
+                  <span class="summary__score">80</span>
+                  <span class="summary__total"> / 100</span>
+                </div>
+              </div>
+              <div class="summary__item">
+                <div class="summary__category">
+                  <img src="assets/images/icon-memory.svg" alt="memory icon" />
+                  <span class="summary__name memory">Memory</span>
+                </div>
+                <div class="summary__result">
+                  <span class="summary__score">92</span>
+                  <span class="summary__total"> / 100</span>
+                </div>
+              </div>
+              <div class="summary__item">
+                <div class="summary__category">
+                  <img src="assets/images/icon-verbal.svg" alt="verbal icon" />
+                  <span class="summary__name verbal">Verbal</span>
+                </div>
+                <div class="summary__result">
+                  <span class="summary__score">61</span>
+                  <span class="summary__total"> / 100</span>
+                </div>
+              </div>
+              <div class="summary__item">
+                <div class="summary__category">
+                  <img src="assets/images/icon-visual.svg" alt="visual icon" />
+                  <span class="summary__name visual">Visual</span>
+                </div>
+                <div class="summary__result">
+                  <span class="summary__score">72</span>
+                  <span class="summary__total"> / 100</span>
+                </div>
+              </div>
+            </div>
+            <div class="results__action">Continue</div>
+          </div>
+        </div>
+
+        <!-- attribution -->
+        <div class="attribution">
+          <p>
+            Challenge by
+            <a
+              href="https://www.frontendmentor.io?ref=challenge"
+              target="_blank"
+              >Frontend Mentor</a
+            >. <br />
+            Coded by
+            <a href="https://github.com/vdeleeuw" target="_blank">vdeleeuw</a>
+            with ❤️.
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
