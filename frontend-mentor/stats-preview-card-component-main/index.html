@@ -52,71 +52,71 @@
         align-items: center;
       }
 
+      img {
+        border-radius: 0.5rem 0.5rem 0 0;
+        width: 100%;
+        height: 100%;
+      }
+
       .card {
         background-color: var(--dark-desaturated-blue);
         border-radius: 0.5rem;
         margin: 1rem 1rem 0 1rem;
         text-align: center;
         max-width: 30em;
+      }
 
-        img {
-          border-radius: 0.5rem 0.5rem 0 0;
-          width: 100%;
+      .card__image {
+        position: relative;
+
+        &::after {
+          content: "";
           height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: var(--soft-violet);
+          mix-blend-mode: multiply;
+          opacity: 0.79;
         }
+      }
 
-        .card__image {
-          position: relative;
+      .card__title {
+        color: var(--white);
+        margin-top: 2rem;
+      }
 
-          &::after {
-            content: "";
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background: var(--soft-violet);
-            mix-blend-mode: multiply;
-            opacity: 0.79;
-          }
-        }
+      .card__content {
+        margin: 0rem 2rem;
+        padding-bottom: 2rem;
+      }
 
-        .card__title {
-          color: var(--white);
-          margin-top: 2rem;
+      .card__text {
+        margin-top: 2rem;
+        color: var(--white);
+        opacity: var(--light-opacity);
+      }
 
-          .accent {
-            color: var(--soft-violet);
-          }
-        }
+      .statistics__item {
+        margin-top: 2rem;
+      }
 
-        .card__content {
-          margin: 0rem 2rem;
-          padding-bottom: 2rem;
-        }
+      .statistics__number {
+        font-size: 2rem;
+        font-weight: var(--bold);
+      }
 
-        .card__text {
-          margin-top: 2rem;
-          color: var(--white);
-          opacity: var(--light-opacity);
-        }
+      .statistics__name {
+        margin-top: 0;
+        letter-spacing: 0.1rem;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        opacity: var(--medium-opacity);
+      }
 
-        .statistics__item {
-          margin-top: 2rem;
-        }
-
-        .statistics__number {
-          font-size: 2rem;
-          font-weight: var(--bold);
-        }
-
-        .statistics__name {
-          margin-top: 0;
-          letter-spacing: 0.1rem;
-          font-size: 0.8rem;
-          text-transform: uppercase;
-          opacity: var(--medium-opacity);
-        }
+      .accent {
+        color: var(--soft-violet);
       }
 
       /* desktop */
@@ -125,43 +125,41 @@
           display: flex;
           flex-direction: row-reverse;
           max-width: 100%;
+        }
 
-          .card__image {
-            img {
-              border-radius: 0 0.5rem 0.5rem 0;
-            }
-          }
+        img {
+          border-radius: 0 0.5rem 0.5rem 0;
+        }
 
-          .card__title {
-            margin-top: 0;
-            text-align: left;
-          }
+        .card__title {
+          margin-top: 0;
+          text-align: left;
+        }
 
-          .card__content {
-            max-width: 30rem;
-            margin: 4rem 7rem 4rem 4rem;
-            padding-bottom: 0;
-          }
+        .card__content {
+          max-width: 30rem;
+          margin: 4rem 7rem 4rem 4rem;
+          padding-bottom: 0;
+        }
 
-          .card__text {
-            text-align: left;
-            margin-left: 0;
-            margin-right: 0;
-          }
+        .card__text {
+          text-align: left;
+          margin-left: 0;
+          margin-right: 0;
+        }
 
-          .card__statistics {
-            display: flex;
-            justify-content: space-between;
-            padding-bottom: 0;
-          }
+        .card__statistics {
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 0;
+        }
 
-          .statistics__number {
-            text-align: left;
-          }
+        .statistics__number {
+          text-align: left;
+        }
 
-          .statistics__name {
-            text-align: left;
-          }
+        .statistics__name {
+          text-align: left;
         }
       }
 
