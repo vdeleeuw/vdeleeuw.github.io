@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- css reset -->
+    <link rel="stylesheet" href="../reset.css" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | NFT preview card component | vdeleeuw</title>
+
+    <style>
+      /* vars */
+      :root {
+        --clr-soft-blue: hsl(215, 51%, 70%);
+        --clr-cyan: hsl(178, 100%, 50%);
+        --clr-very-dark-blue-main: hsl(217, 54%, 11%); /* main bg */
+        --clr-very-dark-blue-card: hsl(216, 50%, 16%); /* card bg */
+        --clr-very-dark-blue-line: hsl(215, 32%, 27%); /* line */
+        --clr-white: hsl(0, 0%, 100%);
+
+        --ft-family: "Outfit";
+        --ft-size: 1.125rem;
+        --ft-weight-light: 300;
+        --ft-weight-medium: 400;
+        --ft-weight-bold: 600;
+      }
+
+      body {
+        min-height: 95vh;
+        background-color: var(--clr-very-dark-blue-main);
+        color: var(--clr-white);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        font-size: var(--ft-size);
+        font-weight: var(--ft-weight-light);
+        font-family: var(--ft-family), sans-serif;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      p {
+        margin-top: 0;
+      }
+
+      .card {
+        background-color: var(--clr-very-dark-blue-card);
+        max-width: 25rem;
+        padding: 1.8rem;
+        border-radius: 1rem;
+      }
+
+      .card__illustration-container {
+        position: relative;
+      }
+
+      .card__illustration--hover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--clr-cyan);
+        opacity: 0;
+        transition: opacity 250ms ease-in-out;
+        position: absolute;
+        inset: 0;
+        border-radius: 0.5rem;
+
+        &:hover {
+          opacity: 0.65;
+        }
+      }
+
+      .card__illustration {
+        border-radius: 0.5rem;
+      }
+
+      .card__title {
+        a {
+          color: var(--clr-white);
+          text-decoration: none;
+          font-weight: var(--ft-weight-bold);
+          transition: color 250ms ease-in-out;
+
+          &:hover {
+            color: var(--clr-cyan);
+          }
+        }
+      }
+
+      .card__description {
+        margin-top: 1rem;
+        color: var(--clr-soft-blue);
+      }
+
+      .card__caracteristics {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+      }
+
+      .card__price {
+        display: flex;
+        align-items: center;
+        color: var(--clr-cyan);
+        font-weight: var(--ft-weight-bold);
+
+        img {
+          margin-right: 0.5rem;
+        }
+      }
+
+      .card__time {
+        display: flex;
+        align-items: center;
+        color: var(--clr-soft-blue);
+
+        img {
+          margin-right: 0.5rem;
+        }
+      }
+
+      hr {
+        margin-top: 1rem;
+        color: var(--clr-very-dark-blue-line);
+      }
+
+      .card__author {
+        display: flex;
+        align-items: center;
+        color: var(--clr-soft-blue);
+        margin-top: 1rem;
+
+        img {
+          width: 3rem;
+          height: 3rem;
+          margin-right: 1rem;
+        }
+      }
+
+      .author__name {
+        color: var(--clr-white);
+        text-decoration: none;
+        transition: color 250ms ease-in-out;
+
+        &:hover {
+          color: var(--clr-cyan);
+        }
+      }
+
+      /* attribution */
+      .attribution {
+        margin-top: 1rem;
+        font-size: 0.68rem;
+        text-align: center;
+        a {
+          color: hsl(228, 45%, 44%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article class="card">
+        <div class="card__illustration-container">
+          <img
+            class="card__illustration"
+            src="images/image-equilibrium.jpg"
+            alt="equilibrium logo"
+          />
+          <a class="card__illustration--hover" href="#">
+            <img src="images/icon-view.svg" alt="view icon" />
+          </a>
+        </div>
+        <h1 class="card__title"><a href="#">Equilibrium #3429</a></h1>
+        <p class="card__description">
+          Our Equilibrium collection promotes balance and calm.
+        </p>
+        <div class="card__caracteristics">
+          <div class="card__price">
+            <img src="images/icon-ethereum.svg" alt="ethereum's logo" />
+            <p>0.041 ETH</p>
+          </div>
+          <div class="card__time">
+            <img src="images/icon-clock.svg" alt="clock image" />
+            <p>3 days left</p>
+          </div>
+        </div>
+        <hr />
+        <div class="card__author">
+          <img src="images/avatar-vdeleeuw.png" alt="author's avatar" />
+          <p>
+            Creation of
+            <a
+              href="https://github.com/vdeleeuw"
+              target="_blank"
+              class="author__name"
+              >vdeleeuw</a
+            >
+          </p>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <!-- attribution -->
+      <div class="attribution">
+        <p>
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. <br />
+          Coded by
+          <a href="https://github.com/vdeleeuw" target="_blank">vdeleeuw</a>
+          with ❤️.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
