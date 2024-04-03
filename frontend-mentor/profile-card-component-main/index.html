@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- css reset -->
+    <link rel="stylesheet" href="../reset.css" />
+
+    <!-- fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Profile card component | vdeleeuw</title>
+
+    <style>
+      :root {
+        /* colors */
+        --color-dark-cyan: hsl(185, 75%, 39%);
+        --color-white: hsl(0, 0%, 100%);
+        --color-very-dark-desaturated-blue: hsl(229, 23%, 23%);
+        --color-dark-grayish-blue: hsl(227, 10%, 46%);
+        --color-dark-gray: hsl(0, 0%, 59%);
+
+        /* font */
+        --font-primary: "Kumbh Sans", sans-serif;
+        --font-size: 1.125rem;
+        --font-weight-medium: 400;
+        --font-weight-bold: 700;
+      }
+
+      body {
+        font-family: var(--font-primary);
+        font-weight: var(--font-weight-medium);
+        min-height: 98vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        background-color: var(--color-dark-cyan);
+        background-image: url(images/bg-pattern-top.svg),
+          url(images/bg-pattern-bottom.svg);
+        background-position-x: -37.5rem, 21.875rem;
+        background-position-y: -25rem, 28.125rem;
+        background-repeat: no-repeat, no-repeat;
+      }
+
+      .profile {
+        max-width: 30rem;
+        min-width: 21rem;
+        background: url(images/bg-pattern-card.svg), var(--color-white);
+        background-repeat: no-repeat;
+        border-radius: 1rem;
+        box-shadow: 0rem 0.2rem 1rem var(--color-very-dark-desaturated-blue);
+      }
+
+      .profile__avatar {
+        display: flex;
+        justify-content: center;
+        padding-top: 5rem;
+
+        img {
+          border: solid 1rem var(--color-white);
+          background-color: var(--color-white);
+          border-radius: 50%;
+          object-fit: none;
+        }
+      }
+
+      .profile__name {
+        font-weight: var(--font-weight-bold);
+        color: var(--color-very-dark-desaturated-blue);
+        font-size: 1.3rem;
+        text-align: center;
+      }
+
+      .profile__age {
+        font-weight: var(--font-weight-medium);
+        color: var(--color-dark-grayish-blue);
+        padding-left: 0.4rem;
+        font-size: 1.3rem;
+      }
+
+      .profile__location {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 1rem;
+        color: var(--color-dark-gray);
+        font-weight: var(--font-weight-medium);
+      }
+
+      .profile__statistics {
+        padding: 2.5rem 0 2rem 0;
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      .profile__statistic {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-very-dark-desaturated-blue);
+        font-size: 1.2rem;
+      }
+
+      .profile__category {
+        font-weight: var(--font-weight-medium);
+        color: var(--color-dark-gray);
+        font-size: 0.6rem;
+        letter-spacing: 0.15rem;
+      }
+
+      .attribution {
+        font-size: 0.7rem;
+        text-align: center;
+        a {
+          color: hsl(228, 45%, 44%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="profile">
+        <div class="profile__avatar">
+          <img alt="profile picture" src="images/image-vdeleeuw.png" />
+        </div>
+        <h1 class="profile__name">
+          V. de Leeuw <span class="profile__age">31</span>
+        </h1>
+        <h2 class="profile__location">France</h2>
+        <div class="profile__statistics">
+          <p class="profile__statistic">
+            80K <span class="profile__category">Followers</span>
+          </p>
+          <p class="profile__statistic">
+            803K <span class="profile__category">Likes</span>
+          </p>
+          <p class="profile__statistic">
+            1.4K <span class="profile__category">Photos</span>
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <!-- attribution -->
+      <div class="attribution">
+        <p>
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. <br />
+          Coded by
+          <a href="https://github.com/vdeleeuw" target="_blank">vdeleeuw</a>
+          with ❤️.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
