@@ -156,18 +156,19 @@
         .container {
           max-width: 80rem;
           display: grid;
-          grid-template-columns: 1fr 3rem 1fr;
-          grid-template-rows: 1fr 3fr 1fr;
+          grid-template-columns: 3fr 2fr;
+          grid-column-gap: 3rem;
+          grid-template-rows: 1fr 4fr 1fr;
 
           grid-template-areas:
-            "header . ."
-            "preview . main"
-            ". . footer";
+            "header ."
+            "preview main"
+            ". footer";
         }
 
         .page__logo {
           grid-area: header;
-          max-width: 20rem;
+          max-width: 15rem;
         }
 
         .page__content {
@@ -180,11 +181,13 @@
         }
 
         .page__social-media {
+          padding-top: 0;
           grid-area: footer;
         }
 
         .page__title {
           text-align: left;
+          font-size: 2.1rem;
         }
 
         .page__description {
@@ -193,6 +196,10 @@
 
         .page__register {
           justify-content: left;
+
+          button {
+            padding: 1rem 4rem;
+          }
         }
 
         .page__social-media {
