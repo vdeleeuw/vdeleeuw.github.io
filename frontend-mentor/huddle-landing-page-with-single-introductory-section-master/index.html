@@ -90,37 +90,42 @@
         padding-top: 3rem;
       }
 
+      .page__content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+
       .page__description {
         color: var(--color-white);
-        text-align: center;
         font-size: 1.2rem;
+        text-align: center;
         font-family: var(--font-secondary);
       }
 
       .page__register {
+        font-size: 0.8rem;
+        color: var(--color-violet);
+        background-color: var(--color-white);
+        box-shadow: 0rem 0.2rem 0.2rem hsla(0, 0%, 0%, 0.3);
+        border-radius: 2rem;
+        padding: 0.8rem 5rem;
         margin-top: 2rem;
-        display: flex;
-        justify-content: center;
 
-        button {
-          color: var(--color-violet);
-          font-size: 0.8rem;
-          background-color: var(--color-white);
-          box-shadow: 0rem 0.2rem 0.2rem hsla(0, 0%, 0%, 0.3);
-          border: none;
-          border-radius: 2rem;
-          padding: 0.8rem 6rem;
+        a {
+          text-decoration: none;
+        }
 
-          &:hover {
-            cursor: pointer;
-            background-color: var(--color-soft-magenta);
-            color: var(--color-white);
-          }
+        &:hover {
+          cursor: pointer;
+          background-color: var(--color-soft-magenta);
+          color: var(--color-white);
         }
       }
 
       .page__social-media {
-        padding-top: 5rem;
+        padding-top: 4rem;
+        margin-top: 1rem;
         display: flex;
         gap: 1rem;
         justify-content: center;
@@ -172,6 +177,7 @@
         }
 
         .page__content {
+          display: inline;
           grid-area: main;
         }
 
@@ -196,12 +202,10 @@
         }
 
         .page__register {
-          justify-content: left;
-
-          button {
-            padding: 1rem 4rem;
-            font-size: 1rem;
-          }
+          padding: 1rem 4rem;
+          max-width: 13rem;
+          font-size: 1rem;
+          text-align: center;
         }
 
         .page__social-media {
@@ -224,7 +228,7 @@
     <main>
       <div class="container">
         <div class="page__logo">
-          <img src="images/logo.svg" alt="Huddle's logo" />
+          <img src="images/logo.svg" alt="Huddle" />
         </div>
         <div class="page__preview">
           <img src="images/illustration-mockups.svg" alt="Huddle's mockup" />
@@ -237,25 +241,31 @@
             engage in genuine discussion.
           </p>
           <div class="page__register">
-            <button>Register</button>
+            <a aria-label="Register" href="#">Register</a>
           </div>
         </div>
         <div class="page__social-media">
-          <button aria-label="Facebook" class="page__social-button">
-            <ion-icon
-              aria-label="Facebook logo"
-              name="logo-facebook"
-            ></ion-icon>
-          </button>
-          <button aria-label="Twitter" class="page__social-button">
-            <ion-icon aria-label="Twitter logo" name="logo-twitter"></ion-icon>
-          </button>
-          <button aria-label="Instragram" class="page__social-button">
-            <ion-icon
-              aria-label="Instragram logo"
-              name="logo-instagram"
-            ></ion-icon>
-          </button>
+          <a
+            aria-label="Facebook"
+            class="page__social-button"
+            href="https://www.facebook.com/"
+          >
+            <ion-icon aria-label="Facebook" name="logo-facebook"></ion-icon>
+          </a>
+          <a
+            aria-label="Twitter"
+            class="page__social-button"
+            href="https://twitter.com/"
+          >
+            <ion-icon aria-label="Twitter" name="logo-twitter"></ion-icon>
+          </a>
+          <a
+            aria-label="Instagram"
+            class="page__social-button"
+            href="https://www.instagram.com/"
+          >
+            <ion-icon aria-label="Instagram" name="logo-instagram"></ion-icon>
+          </a>
         </div>
       </div>
     </main>
