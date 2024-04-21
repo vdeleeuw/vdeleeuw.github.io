@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- css reset -->
+    <link rel="stylesheet" href="../reset.css" />
+
+    <title>Frontend Mentor | Social proof section | vdeleeuw</title>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        /* colors */
+        --color-very-dark-magenta: hsl(300, 43%, 22%);
+        --color-soft-pink: hsl(333, 80%, 67%);
+        --color-dark-grayish-magenta: hsl(303, 10%, 53%);
+        --color-light-grayish-magenta: hsl(300, 24%, 96%);
+        --color-white: hsl(0, 0%, 100%);
+
+        /* fonts */
+        --font-primary: "League Spartan", sans-serif;
+        --font-size: 0.9375rem;
+        --font-weight-light: 400;
+        --font-weight-medium: 500;
+        --font-weight-bold: 700;
+      }
+
+      body {
+        font-family: var(--font-primary);
+        font-size: var(--font-size);
+        font-weight: var(--font-weight-medium);
+
+        min-height: 98vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        background: url(images/bg-pattern-top-mobile.svg),
+          url(images/bg-pattern-bottom-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: left top, right bottom;
+        background-size: 50% cover, 50% cover;
+      }
+
+      .container {
+        padding: 1rem 1rem 0 1rem;
+      }
+
+      .container__reviews {
+        padding-top: 2rem;
+      }
+
+      .container__title {
+        text-align: center;
+        letter-spacing: -0.1rem;
+        color: var(--color-very-dark-magenta);
+      }
+
+      .container__description {
+        text-align: center;
+        padding-bottom: 1rem;
+        color: var(--color-dark-grayish-magenta);
+      }
+
+      .container__ratings {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 1rem;
+        gap: 1rem;
+      }
+
+      .container__rating {
+        border-radius: 0.5rem;
+        padding: 0.8rem;
+        background-color: var(--color-light-grayish-magenta);
+      }
+
+      .container__stars {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          padding-left: 0.5rem;
+        }
+      }
+
+      .container__stars-rater {
+        text-align: center;
+        margin-top: 0.5rem;
+        color: var(--color-very-dark-magenta);
+        font-weight: var(--font-weight-bold);
+      }
+
+      .card__review {
+        background-color: var(--color-very-dark-magenta);
+        border-radius: 0.5rem;
+        padding: 2rem;
+        margin-top: 1rem;
+      }
+
+      .card__people {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 1.5rem;
+        p {
+          margin: 0;
+        }
+      }
+
+      .card__title {
+        display: flex;
+      }
+
+      .card__avatar {
+        display: flex;
+        align-items: center;
+
+        img {
+          height: 2.5rem;
+          width: 2.5rem;
+          border-radius: 4rem;
+        }
+      }
+
+      .card__role {
+        font-weight: var(--font-weight-light);
+        color: var(--color-soft-pink);
+      }
+
+      .card__name {
+        font-weight: var(--font-weight-bold);
+        color: var(--color-white);
+      }
+
+      .card__text {
+        color: var(--color-white);
+      }
+
+      /* desktop */
+      @media screen and (min-width: 50rem) {
+        body {
+          background: url(images/bg-pattern-top-desktop.svg),
+            url(images/bg-pattern-bottom-desktop.svg);
+          background-repeat: no-repeat;
+          background-position: left top, right bottom;
+          background-size: 50% cover, 50% cover;
+        }
+
+        .container {
+          max-width: 70rem;
+        }
+
+        .container__header {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .container__title {
+          text-align: left;
+          font-size: 2.8rem;
+          line-height: 2.3rem;
+          margin-top: 0;
+          max-width: 20rem;
+        }
+
+        .container__description {
+          padding-top: 1rem;
+          text-align: left;
+          max-width: 25rem;
+        }
+
+        .container__rating {
+          display: flex;
+          flex-direction: row;
+          padding-left: 1rem;
+          padding-right: 2rem;
+
+          &:nth-child(0n + 1) {
+            transform: translateX(-6rem);
+          }
+          &:nth-child(0n + 2) {
+            transform: translateX(-3rem);
+          }
+        }
+
+        .container__stars-rater {
+          padding-left: 2rem;
+          margin: 0;
+        }
+
+        .container__reviews {
+          display: flex;
+          gap: 2rem;
+          flex-direction: row;
+        }
+
+        .card__review {
+          &:nth-child(0n + 2) {
+            transform: translateY(1rem);
+          }
+          &:nth-child(0n + 3) {
+            transform: translateY(2rem);
+          }
+        }
+
+        .attribution {
+          padding-top: 2rem;
+        }
+      }
+
+      .attribution {
+        font-size: 0.7rem;
+        text-align: center;
+        a {
+          color: hsl(228, 45%, 44%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="container__header">
+          <div class="container__title-group">
+            <h1 class="container__title">
+              10,000+ of&nbsp;our users love our products.
+            </h1>
+            <p class="container__description">
+              We only provide great products combined with excellent customer
+              service. See what our satisfied customers are saying about our
+              services.
+            </p>
+          </div>
+          <div class="container__ratings">
+            <div class="container__rating">
+              <div class="container__stars">
+                <img src="images/icon-star.svg" alt="star icon" />
+                <img src="images/icon-star.svg" alt="star icon" />
+                <img src="images/icon-star.svg" alt="star icon" />
+                <img src="images/icon-star.svg" alt="star icon" />
+                <img src="images/icon-star.svg" alt="star icon" />
+              </div>
+              <p class="container__stars-rater">Rated 5 Stars in Reviews</p>
+            </div>
+            <div class="container__rating">
+              <div class="container__stars">
+                <img src="images/icon-star.svg" alt="star icon" />
+                <img src="images/icon-star.svg" alt="star icon" />
+                <img src="images/icon-star.svg" alt="star icon" />
+                <img src="images/icon-star.svg" alt="star icon" />
+                <img src="images/icon-star.svg" alt="star icon" />
+              </div>
+              <p class="container__stars-rater">Rated 5 Stars in Report Guru</p>
+            </div>
+            <div class="container__rating">
+              <div class="container__stars">
+                <img src="images/icon-star.svg" alt="star icon" />
+                <img src="images/icon-star.svg" alt="star icon" />
+                <img src="images/icon-star.svg" alt="star icon" />
+                <img src="images/icon-star.svg" alt="star icon" />
+                <img src="images/icon-star.svg" alt="star icon" />
+              </div>
+              <p class="container__stars-rater">Rated 5 Stars in BestTech</p>
+            </div>
+          </div>
+        </div>
+        <div class="container__reviews">
+          <!-- Colton -->
+          <div class="card__review">
+            <div class="card__title">
+              <div class="card__avatar">
+                <img src="images/image-colton.jpg" alt="Colton's avatar" />
+              </div>
+              <div class="card__people">
+                <p class="card__name">Colton Smith</p>
+                <p class="card__role">Verified Buyer</p>
+              </div>
+            </div>
+            <p class="card__text">
+              "We needed the same printed design as the one we had ordered a
+              week prior. Not only did they find the original order, but we also
+              received it in time. Excellent!"
+            </p>
+          </div>
+          <!-- Irene -->
+          <div class="card__review">
+            <div class="card__title">
+              <div class="card__avatar">
+                <img src="images/image-irene.jpg" alt="Irene's avatar" />
+              </div>
+              <div class="card__people">
+                <p class="card__name">Irene Roberts</p>
+                <p class="card__role">Verified Buyer</p>
+              </div>
+            </div>
+            <p class="card__text">
+              "Customer service is always excellent and very quick turn around.
+              Completely delighted with the simplicity of the purchase and the
+              speed of delivery."
+            </p>
+          </div>
+          <!-- Anne -->
+          <div class="card__review">
+            <div class="card__title">
+              <div class="card__avatar">
+                <img src="images/image-anne.jpg" alt="Anne's avatar" />
+              </div>
+              <div class="card__people">
+                <p class="card__name">Anne Wallace</p>
+                <p class="card__role">Verified Buyer</p>
+              </div>
+            </div>
+            <p class="card__text">
+              "Put an order with this company and can only praise them for the
+              very high standard. Will definitely use them again and recommend
+              them to everyone!"
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <!-- attribution -->
+      <div class="attribution">
+        <p>
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. <br />
+          Coded by
+          <a href="https://github.com/vdeleeuw" target="_blank">vdeleeuw</a>
+          with ❤️.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
