@@ -3,6 +3,7 @@ Various problems :
  - bad a11y (too much span/div)
  - no footer for attribution
  - misuse of padding/margin
+ - too much useless nesting for css
  - <span> instead of a <button>
 -------------------------------------------->
 <!DOCTYPE html>
@@ -21,6 +22,10 @@ Various problems :
         --orangey-yellow: hsl(39, 100%, 56%);
         --green-teal: hsl(166, 100%, 37%);
         --cobalt-blue: hsl(234, 85%, 45%);
+        --light-red-bg: hsla(0, 100%, 67%, 0.1);
+        --orangey-yellow-bg: hsla(39, 100%, 56%, 0.1);
+        --green-teal-bg: hsla(166, 100%, 37%, 0.1);
+        --cobalt-blue-bg: hsla(234, 85%, 45%, 0.1);
         /* Gradients */
         --light-slate-blue: hsl(252, 100%, 67%); /* background */
         --light-royal-blue: hsl(241, 81%, 54%); /* background */
@@ -51,7 +56,7 @@ Various problems :
         font-size: var(--font-size);
         font-weight: var(--medium);
         margin: 0;
-        min-height: 95vh;
+        min-height: 100vh;
       }
 
       .reaction {
@@ -70,108 +75,126 @@ Various problems :
         color: var(--cobalt-blue);
       }
 
-      .results {
+      .bg-reaction {
+        background-color: var(--light-red-bg);
+      }
+
+      .bg-memory {
+        background-color: var(--orangey-yellow-bg);
+      }
+
+      .bg-verbal {
+        background-color: var(--green-teal-bg);
+      }
+
+      .bg-visual {
+        background-color: var(--cobalt-blue-bg);
+      }
+
+      .synthesis {
         display: flex;
+        align-items: center;
         flex-direction: column;
 
-        .synthesis {
-          display: flex;
-          align-items: center;
-          flex-direction: column;
+        background: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
+        color: var(--white);
+        border-radius: 0 0 2rem 2rem;
 
-          background: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
-          color: var(--white);
-          border-radius: 0 0 2em 2em;
+        padding: 2rem 5rem;
+      }
 
-          .synthesis__percentage {
-            background: linear-gradient(var(--violet-blue), var(--persian-blue));
-            border-radius: 100%;
-            width: 9em;
-            height: 9em;
+      .synthesis__percentage {
+        background: linear-gradient(var(--violet-blue), var(--persian-blue));
+        border-radius: 100%;
+        width: 10rem;
+        height: 10rem;
+        margin-top: 1rem;
 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
 
-            .synthesis__score {
-              font-size: 3.8em;
-              font-weight: var(--very-bold);
-            }
+      .synthesis__score {
+        font-size: 3.8rem;
+        font-weight: var(--very-bold);
+      }
 
-            .synthesis__total {
-              font-weight: var(--bold);
-              color: var(--light-lavender);
-              opacity: 0.5;
-            }
-          }
+      .synthesis__total {
+        font-weight: var(--bold);
+        color: var(--light-lavender);
+        opacity: 0.5;
+      }
 
-          .synthesis__title {
-            padding: 0.5em;
-            color: var(--white);
-            opacity: 0.6;
-            font-size: 1.2em;
-          }
+      .synthesis__title {
+        margin-top: 0;
+        color: var(--white);
+        opacity: 0.6;
+        font-size: 1.2rem;
+      }
 
-          .synthesis__subtitle {
-            padding-top: 1em;
-            font-size: 1.5em;
-            font-weight: var(--bold);
-          }
+      .synthesis__subtitle {
+        margin-top: 1.5rem;
+        font-size: 1.5rem;
+        font-weight: var(--bold);
+      }
 
-          .synthesis__text {
-            opacity: 0.7;
-            padding: 0 5em 2em 5em;
-            text-align: center;
-          }
+      .synthesis__text {
+        opacity: 0.7;
+        margin-top: 1rem;
+        text-align: center;
+      }
+
+      .summary {
+        padding: 1.5rem 2rem;
+        font-weight: var(--very-bold);
+        text-align: center;
+      }
+
+      .summary__title {
+        font-weight: var(--bold);
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        font-size: 1.4em;
+        text-align: left;
+      }
+
+      .summary__item {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+
+        margin-top: 1rem;
+        padding: 1rem;
+        font-size: 1.2rem;
+        border-radius: 0.7rem;
+      }
+
+      .summary__category {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        img {
+          margin-right: 0.8rem;
         }
+      }
 
-        .summary {
-          padding: 1.5em 2em 0 2em;
-          font-weight: var(--very-bold);
-
-          .summary__title {
-            font-weight: var(--bold);
-            font-size: 1.4em;
-          }
-
-          .summary__item {
-            display: flex;
-            flex-direction: row;
-            padding: 2em 0 0 0;
-            font-size: 1.2em;
-            justify-content: space-between;
-            align-items: center;
-
-            .summary__category {
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              img {
-                padding-right: 0.8em;
-              }
-            }
-          }
-
-          .summary__total {
-            opacity: 0.4;
-          }
-        }
-
-        .summary__categories {
-          padding:  0 2em 2em 2em;
-        }
+      .summary__total {
+        opacity: 0.4;
       }
 
       .results__action {
         color: var(--white);
         background-color: var(--dark-gray-blue);
-        border-radius: 2em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0.8em;
-        font-size: 1.2em;
+        border: none;
+        border-radius: 2rem;
+        font-size: 1.2rem;
+
+        margin-top: 1.5em;
+        padding: 1rem 0;
+        width: 100%;
+
         cursor: pointer;
 
         &:hover {
@@ -180,9 +203,8 @@ Various problems :
       }
 
       /* desktop */
-      @media screen and (min-width: 50em) {
-        .container {
-          min-height: 95vh;
+      @media screen and (min-width: 50rem) {
+        body {
           display: flex;
           justify-content: center;
           align-items: center;
@@ -190,26 +212,27 @@ Various problems :
         }
 
         .results {
+          display: flex;
           flex-direction: row;
+          border-radius: 2rem;
+          box-shadow: 1rem 1rem 2rem 1rem hsla(0, 0%, 0%, 0.1);
+        }
 
-          .synthesis {
-            border-radius: 2em;
-            width: 25em;
+        .synthesis {
+          border-radius: 2rem;
+          max-width: 14rem;
+          min-height: 26rem;
+          display: flex;
+          justify-content: space-between;
+        }
 
-            .synthesis__text {
-              padding: 0 6em ;
-            }
-          }
-
-          .summary {
-            padding: 2em;
-            width: 20em;
-          }
+        .summary {
+          min-width: 20rem;
         }
       }
 
       .attribution {
-        font-size: 11px;
+        font-size: 0.6875rem;
         text-align: center;
 
         a {
@@ -220,86 +243,78 @@ Various problems :
   </head>
   <body>
     <main>
-      <div class="container">
-        <div class="results">
-          <div class="synthesis">
-            <h1 class="synthesis__title">Your Result</h1>
-            <div class="synthesis__percentage">
-              <span class="synthesis__score">76</span>
-              <span class="synthesis__total"> of 100</span>
-            </div>
-            <span class="synthesis__subtitle">Great</span>
-            <p class="synthesis__text">
-              You scored higher than 65% of the people who have taken these
-              tests.
-            </p>
+      <div class="results">
+        <div class="synthesis">
+          <h1 class="synthesis__title">Your Result</h1>
+          <div class="synthesis__percentage">
+            <span class="synthesis__score">76</span>
+            <span class="synthesis__total"> of 100</span>
           </div>
-          <div class="summary">
-            <span class="summary__title">Summary</span>
-            <div class="summary__categories">
-              <div class="summary__item">
-                <div class="summary__category">
-                  <img
-                    src="assets/images/icon-reaction.svg"
-                    alt="reaction icon"
-                  />
-                  <span class="summary__name reaction">Reaction</span>
-                </div>
-                <div class="summary__result">
-                  <span class="summary__score">80</span>
-                  <span class="summary__total"> / 100</span>
-                </div>
-              </div>
-              <div class="summary__item">
-                <div class="summary__category">
-                  <img src="assets/images/icon-memory.svg" alt="memory icon" />
-                  <span class="summary__name memory">Memory</span>
-                </div>
-                <div class="summary__result">
-                  <span class="summary__score">92</span>
-                  <span class="summary__total"> / 100</span>
-                </div>
-              </div>
-              <div class="summary__item">
-                <div class="summary__category">
-                  <img src="assets/images/icon-verbal.svg" alt="verbal icon" />
-                  <span class="summary__name verbal">Verbal</span>
-                </div>
-                <div class="summary__result">
-                  <span class="summary__score">61</span>
-                  <span class="summary__total"> / 100</span>
-                </div>
-              </div>
-              <div class="summary__item">
-                <div class="summary__category">
-                  <img src="assets/images/icon-visual.svg" alt="visual icon" />
-                  <span class="summary__name visual">Visual</span>
-                </div>
-                <div class="summary__result">
-                  <span class="summary__score">72</span>
-                  <span class="summary__total"> / 100</span>
-                </div>
-              </div>
-            </div>
-            <div class="results__action">Continue</div>
-          </div>
-        </div>
-
-        <!-- attribution -->
-        <div class="attribution">
-          <p>
-            Challenge by
-            <a
-              href="https://www.frontendmentor.io?ref=challenge"
-              target="_blank"
-              >Frontend Mentor</a
-            >. <br />
-            Coded by
-            <a href="https://github.com/vdeleeuw" target="_blank">vdeleeuw</a>
-            with ❤️.
+          <span class="synthesis__subtitle">Great</span>
+          <p class="synthesis__text">
+            You scored higher than 65% of the people who have taken these tests.
           </p>
+        </div>
+        <div class="summary">
+          <h2 class="summary__title">Summary</h2>
+          <div class="summary__item bg-reaction">
+            <div class="summary__category">
+              <img src="assets/images/icon-reaction.svg" alt="reaction icon" />
+              <span class="summary__name reaction">Reaction</span>
+            </div>
+            <div class="summary__result">
+              <span class="summary__score">80</span>
+              <span class="summary__total"> / 100</span>
+            </div>
+          </div>
+          <div class="summary__item bg-memory">
+            <div class="summary__category">
+              <img src="assets/images/icon-memory.svg" alt="memory icon" />
+              <span class="summary__name memory">Memory</span>
+            </div>
+            <div class="summary__result">
+              <span class="summary__score">92</span>
+              <span class="summary__total"> / 100</span>
+            </div>
+          </div>
+          <div class="summary__item bg-verbal">
+            <div class="summary__category">
+              <img src="assets/images/icon-verbal.svg" alt="verbal icon" />
+              <span class="summary__name verbal">Verbal</span>
+            </div>
+            <div class="summary__result">
+              <span class="summary__score">61</span>
+              <span class="summary__total"> / 100</span>
+            </div>
+          </div>
+          <div class="summary__item bg-visual">
+            <div class="summary__category">
+              <img src="assets/images/icon-visual.svg" alt="visual icon" />
+              <span class="summary__name visual">Visual</span>
+            </div>
+            <div class="summary__result">
+              <span class="summary__score">72</span>
+              <span class="summary__total"> / 100</span>
+            </div>
+          </div>
+          <button class="results__action">Continue</button>
         </div>
       </div>
     </main>
+
+    <!-- attribution -->
+    <footer>
+      <div class="attribution">
+        <p>
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. <br />
+          Coded by
+          <a href="https://github.com/vdeleeuw" target="_blank">vdeleeuw</a>
+          with ❤️.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
