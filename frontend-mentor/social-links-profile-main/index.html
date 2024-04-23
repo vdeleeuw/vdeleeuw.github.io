@@ -1,9 +1,3 @@
-<!-------------------------------------------
-Various problems : 
- - no footer for attribution
- - misuse of padding/margin
- - font size values in px insted of em/rem
--------------------------------------------->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,50 +13,48 @@ Various problems :
       }
 
       body {
-        overflow: hidden;
         background-color: hsl(0, 0%, 8%);
         color: hsl(0, 0%, 100%);
         font-family: "Inter", sans-serif;
-      }
 
-      p {
-        font-size: 14px;
-        padding: 0.5em;
-        text-align: center;
-      }
-
-      .container {
-        height: 100vh;
+        min-height: 100vh;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
       }
 
+      p {
+        font-size: 0.875rem;
+        margin: 0.5rem;
+        text-align: center;
+      }
+
       .card {
-        padding: 0 2em;
-        border-radius: 1em;
+        padding: 2rem;
+        border-radius: 1rem;
         background-color: hsl(0, 0%, 12%);
       }
 
       /* title */
       .title-block {
         display: flex;
-        padding: 1em;
+        margin: 1rem;
         flex-direction: column;
         align-items: center;
 
         .title-block__avatar {
-          padding: 1em;
+          padding: 1rem;
         }
 
         .title-block__main {
-          font-size: 2em;
+          font-size: 2rem;
           font-weight: 700;
         }
 
         .title-block__subtitle {
-          padding-top: 0.5em;
-          font-size: 1em;
+          padding-top: 0.5rem;
+          font-size: 1rem;
           font-weight: 600;
           color: hsl(75, 94%, 57%);
         }
@@ -75,11 +67,11 @@ Various problems :
         align-items: center;
 
         .button-list__item {
-          width: 80%;
+          width: 15rem;
           background-color: hsl(0, 0%, 20%);
-          padding: 1em;
-          border-radius: 1em;
-          margin: 0.5em 0;
+          padding: 1rem 2rem;
+          border-radius: 1rem;
+          margin: 0.5rem 0;
           font-weight: 600;
           text-align: center;
           text-decoration: none;
@@ -100,7 +92,7 @@ Various problems :
 
       .attribution {
         padding: 1em 0;
-        font-size: 11px;
+        font-size: 0.6875rem;
         text-align: center;
 
         a {
@@ -111,61 +103,59 @@ Various problems :
   </head>
   <body>
     <main>
-      <div class="container">
-        <div class="card">
-          <div class="title-block">
-            <img
-              class="title-block__avatar"
-              src="assets/images/avatar-vdeleeuw.png"
-              alt="user's avatar"
-            />
-            <h1 class="title-block__main">V. de Leeuw</h1>
-            <span class="title-block__subtitle">Somewhere, France</span>
-          </div>
+      <div class="card">
+        <div class="title-block">
+          <img
+            class="title-block__avatar"
+            src="assets/images/avatar-vdeleeuw.png"
+            alt="user's avatar"
+          />
+          <h1 class="title-block__main">V. de Leeuw</h1>
+          <span class="title-block__subtitle">Somewhere, France</span>
+        </div>
 
-          <p>"Full-stack developer and avid musician."</p>
+        <p>"Full-stack developer and avid musician."</p>
 
-          <div class="button-list">
-            <a
-              class="button-list__item button-list__item--hover"
-              href="https://github.com/vdeleeuw"
-              target="_blank"
-            >
-              <span>GitHub</span></a
-            >
-            <a
-              class="button-list__item button-list__item--hover"
-              href="https://www.frontendmentor.io/profile/vdeleeuw"
-              target="_blank"
-              ><span>Frontend Mentor</span></a
-            >
-            <span class="button-list__item button-list__item--disabled"
-              >LinkedIn</span
-            >
-            <span class="button-list__item button-list__item--disabled"
-              >Twitter</span
-            >
-            <span class="button-list__item button-list__item--disabled"
-              >Instagram</span
-            >
-          </div>
-
-          <!-- attribution -->
-          <div class="attribution">
-            <p>
-              Challenge by
-              <a
-                href="https://www.frontendmentor.io?ref=challenge"
-                target="_blank"
-                >Frontend Mentor</a
-              >. <br />
-              Coded by
-              <a href="https://github.com/vdeleeuw" target="_blank">vdeleeuw</a>
-              with ❤️.
-            </p>
-          </div>
+        <div class="button-list">
+          <a
+            class="button-list__item button-list__item--hover"
+            href="https://github.com/vdeleeuw"
+            target="_blank"
+          >
+            <span>GitHub</span></a
+          >
+          <a
+            class="button-list__item button-list__item--hover"
+            href="https://www.frontendmentor.io/profile/vdeleeuw"
+            target="_blank"
+            ><span>Frontend Mentor</span></a
+          >
+          <span class="button-list__item button-list__item--disabled"
+            >LinkedIn</span
+          >
+          <span class="button-list__item button-list__item--disabled"
+            >Twitter</span
+          >
+          <span class="button-list__item button-list__item--disabled"
+            >Instagram</span
+          >
         </div>
       </div>
     </main>
+
+    <!-- attribution -->
+    <footer>
+      <div class="attribution">
+        <p>
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. <br />
+          Coded by
+          <a href="https://github.com/vdeleeuw" target="_blank">vdeleeuw</a>
+          with ❤️.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
