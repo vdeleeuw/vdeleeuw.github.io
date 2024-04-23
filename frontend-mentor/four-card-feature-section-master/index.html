@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- css reset -->
+    <link rel="stylesheet" href="../reset.css" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Four card feature section | vdeleeuw</title>
+
+    <style>
+      :root {
+        /* colors */
+        --color-red: hsl(0, 78%, 62%);
+        --color-cyan: hsl(180, 62%, 55%);
+        --color-orange: hsl(34, 97%, 64%);
+        --color-blue: hsl(212, 86%, 64%);
+        --color-very-dark-blue: hsl(234, 12%, 34%);
+        --color-grayish-blue: hsl(229, 6%, 66%);
+        --color-very-light-gray: hsl(0, 0%, 98%);
+
+        /* font */
+        --font-size: 0.9375rem;
+        --font-primary: "Poppins", sans-serif;
+        --font-weight-light: 200;
+        --font-weight-medium: 400;
+        --font-weight-bold: 600;
+      }
+
+      body {
+        font-family: var(--font-primary);
+        font-size: var(--font-size);
+        color: var(--color-very-dark-blue);
+
+        min-height: 98vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .container {
+        padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+      }
+
+      .page__title {
+        font-weight: var(--font-weight-light);
+        font-size: 1.5rem;
+        text-align: center;
+        line-height: 2.5rem;
+
+        strong {
+          font-weight: var(--font-weight-bold);
+        }
+      }
+
+      .page__description {
+        margin-top: 1rem;
+        font-weight: var(--font-weight-medium);
+        color: var(--color-grayish-blue);
+        text-align: center;
+      }
+
+      .page__tool {
+        border-radius: 0.3rem;
+        padding: 2rem;
+        box-shadow: 0rem 0rem 0.6rem hsla(0, 0%, 0%, 0.3);
+        display: flex;
+        flex-direction: column;
+        margin-top: 1.5rem;
+      }
+
+      .tool__supervisor {
+        border-top: 0.2rem solid var(--color-cyan);
+      }
+
+      .tool__karma {
+        border-top: 0.2rem solid var(--color-orange);
+      }
+
+      .tool__calculator {
+        border-top: 0.2rem solid var(--color-blue);
+      }
+
+      .tool__team-builder {
+        border-top: 0.2rem solid var(--color-red);
+      }
+
+      .tool__logo {
+        float: right;
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: right;
+      }
+
+      .tool__title {
+        margin-top: 0;
+        font-size: 1.2rem;
+        font-weight: var(--font-weight-bold);
+      }
+
+      .tool__description {
+        margin-top: 0.5rem;
+        color: var(--color-grayish-blue);
+        font-size: 0.8rem;
+      }
+
+      /* desktop */
+      @media screen and (min-width: 35rem) {
+        .container {
+          max-width: 80rem;
+
+          display: grid;
+          grid-column-gap: 1rem;
+          align-items: center;
+          justify-content: center;
+
+          grid-template-areas:
+            "header header header "
+            "tool-col1 tool-col2 tool-col3";
+        }
+
+        .page__header {
+          grid-area: header;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          margin-bottom: 2rem;
+        }
+
+        .page__tool {
+          max-width: 20rem;
+        }
+
+        .page__title {
+          font-size: 2rem;
+        }
+
+        .page__description {
+          max-width: 30rem;
+        }
+
+        .page__tool-col1 {
+          grid-area: tool-col1;
+        }
+
+        .page__tool-col2 {
+          grid-area: tool-col2;
+        }
+
+        .page__tool-col3 {
+          grid-area: tool-col3;
+        }
+      }
+
+      /* attrib */
+      .attribution {
+        font-size: 0.7rem;
+        text-align: center;
+        a {
+          color: hsl(228, 45%, 44%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="page__header">
+          <h1 class="page__title">
+            Reliable, efficient delivery <br />
+            <strong>Powered by Technology</strong>
+          </h1>
+          <p class="page__description">
+            Our Artificial Intelligence powered tools use millions of project
+            data points to ensure that your project is successful
+          </p>
+        </div>
+        <!-- Supervisor -->
+        <div class="page__tool-col1">
+          <div class="page__tool tool__supervisor">
+            <h2 class="tool__title">Supervisor</h2>
+            <p class="tool__description">
+              Monitors activity to identify project roadblocks
+            </p>
+            <div class="tool__logo">
+              <img src="images/icon-supervisor.svg" alt="Supervisor's logo" />
+            </div>
+          </div>
+        </div>
+        <div class="page__tool-col2">
+          <!-- Team Builder -->
+          <div class="page__tool tool__team-builder">
+            <h2 class="tool__title">Team Builder</h2>
+            <p class="tool__description">
+              Scans our talent network to create the optimal team for your
+              project
+            </p>
+            <div class="tool__logo">
+              <img
+                src="images/icon-team-builder.svg"
+                alt="Team builder's logo"
+              />
+            </div>
+          </div>
+          <!-- Karma -->
+          <div class="page__tool tool__karma">
+            <h2 class="tool__title">Karma</h2>
+            <p class="tool__description">
+              Regularly evaluates our talent to ensure quality
+            </p>
+            <div class="tool__logo">
+              <img src="images/icon-karma.svg" alt="Karma's logo" />
+            </div>
+          </div>
+        </div>
+        <div class="page__tool-col3">
+          <!-- Calculator -->
+          <div class="page__tool tool__calculator">
+            <h2 class="tool__title">Calculator</h2>
+            <p class="tool__description">
+              Uses data from past projects to provide better delivery estimates
+            </p>
+            <div class="tool__logo">
+              <img src="images/icon-calculator.svg" alt="Calculator's logo" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <!-- attribution -->
+      <div class="attribution">
+        <p>
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. <br />
+          Coded by
+          <a href="https://github.com/vdeleeuw" target="_blank">vdeleeuw</a>
+          with ❤️.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
